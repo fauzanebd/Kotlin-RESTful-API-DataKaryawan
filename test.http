@@ -1,0 +1,83 @@
+### Create Employee
+
+POST http://localhost:8080/api/employees
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": "ST0003",
+  "name":  "Budi Darmono",
+  "position": "Staff"
+}
+
+### Create Employee Error
+
+POST http://localhost:8080/api/employees
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": "",
+  "name":  "",
+  "position": ""
+}
+
+### Get Employee
+GET http://localhost:8080/api/employees/ST0002
+X-Api-Key: SECRET
+Accept: application/json
+
+### Get Employee Not Found
+GET http://localhost:8080/api/employees/NGARANG
+X-Api-Key: SECRET
+Accept: application/json
+
+### Update Employee
+PUT http://localhost:8080/api/employees/ST0001
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Wahyu Darwanto Sarmidi",
+  "position": "Staff"
+}
+
+### Update Non-Exist Employee
+PUT http://localhost:8080/api/employees/NGARANG
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Wahyu Darwanto Sarmidi",
+  "position": "Staff"
+}
+
+### Update Employee with Invalid Body
+PUT http://localhost:8080/api/employees/ST0001
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "",
+  "position": ""
+}
+
+### Delete Employee
+DELETE http://localhost:8080/api/employees/ST0001
+X-Api-Key: SECRET
+Accept: application/json
+
+### List Employees
+GET http://localhost:8080/api/employees
+X-Api-Key: SECRET
+Accept: application/json
+
+### List Employees with parameter
+GET http://localhost:8080/api/employees?size=2&page=1
+X-Api-Key: SECRET
+Accept: application/json
